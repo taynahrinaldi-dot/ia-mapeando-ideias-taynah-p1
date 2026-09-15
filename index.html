@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Rotinas de Estudos da Taynah Mariana</title>
+    
+    <!-- Fonte Google Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Arquivo de Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <span class="tag-proto">Protótipo Interativo</span>
+        <h1>Organizador de Rotinas de Estudos da Taynah Mariana</h1>
+        <p>Identificando as principais dores, incômodos e insatisfações da rotina acadêmica para construir a solução ideal.</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Card 1 -->
+        <div class="card" onclick="openModal(
+            '📱 Procrastinação e Distração Digital', 
+            'Sensação frequente de abrir o celular para checar uma mensagem rápido e perder de 30 a 50 minutos nas redes sociais. No fim do dia, fica a culpa e o acúmulo de matérias.',
+            'O app oferecerá um temporizador Pomodoro integrado com bloqueador de notificações e meta de foco visual para evitar interrupções.'
+        )">
+            <div>
+                <div class="card-icon">⏳</div>
+                <h2 class="card-title">Procrastinação & Celular</h2>
+                <p class="card-preview">Perda frequente do foco por notificações diárias e falta de disciplina nos momentos de pausa...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="openModal(
+            '📑 Desorganização de Materiais', 
+            'Anotações espalhadas em cadernos, PDFs salvos em várias pastas no PC e prints de aulas perdidos no celular. O estudante perde um tempo precioso apenas procurando o que estudar.',
+            'Centralização em um painel único com tags por disciplina, anexos e links organizados por prioridade de prova.'
+        )">
+            <div>
+                <div class="card-icon">📁</div>
+                <h2 class="card-title">Materiais Espalhados</h2>
+                <p class="card-preview">Perda de tempo procurando resumos, PDFs e anotações armazenados em lugares diferentes...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="openModal(
+            '🤯 Sobrecarga e Ansiedade', 
+            'O acúmulo de tarefas gera a sensação constante de estar atrasado em tudo, resultando em ansiedade, noites mal dormidas e esgotamento mental (burnout).',
+            'Divisão automática de conteúdos grandes em micro-tarefas diárias simples para diminuir o impacto psicológico do acúmulo.'
+        )">
+            <div>
+                <div class="card-icon">🧠</div>
+                <h2 class="card-title">Sobrecarga & Ansiedade</h2>
+                <p class="card-preview">Sensação de estar sempre atrasada em relação aos prazos e sem saber por onde começar...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="openModal(
+            '🗓️ Falta de Cronograma Claro', 
+            'Sentar na mesa para estudar sem saber exatamente qual matéria priorizar no dia. Isso causa indecisão e faz o estudante focar apenas no que gosta, ignorando o mais importante.',
+            'Rotinas pré-programadas em calendário dinâmico que avisa automaticamente a matéria e tarefa da vez.'
+        )">
+            <div>
+                <div class="card-icon">📅</div>
+                <h2 class="card-title">Ausência de Rotina Visível</h2>
+                <p class="card-preview">Indecisão diária sobre o que estudar primeiro por falta de um planejamento diário estruturado...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="openModal(
+            '📉 Falsa Sensação de Produtividade', 
+            'Estudar por várias horas mas sentir que não aprendeu nada ou que não evoluiu no conteúdo. Não conseguir medir o próprio progresso causa desmotivação.',
+            'Gráficos simples de desempenho diário e barra de progresso acumulado que trazem recompensa visual a cada tarefa concluída.'
+        )">
+            <div>
+                <div class="card-icon">📊</div>
+                <h2 class="card-title">Sensação de Estagnação</h2>
+                <p class="card-preview">Não conseguir enxergar o avanço no aprendizado diário, gerando frustração ao final da semana...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" onclick="openModal(
+            '😴 Cansaço & Falta de Pausas', 
+            'Tentar estudar direto por 4 horas sem parar para cumprir metas irreais, resultando em queda brusca do rendimento e retenção quase nula no final do dia.',
+            'Alertas inteligentes de descanso obrigatório com sugestões de pausas ativas (alongamento, hidratação).'
+        )">
+            <div>
+                <div class="card-icon">⚡</div>
+                <h2 class="card-title">Exaustão Mental</h2>
+                <p class="card-preview">Estudar até o esgotamento por falta de pausas estratégicas programadas durante o dia...</p>
+            </div>
+            <button class="btn-card">Ver Diagnóstico Completo</button>
+        </div>
+
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+        <div class="modal-body">
+            <button class="close-btn" onclick="closeModal()">✕</button>
+            <h3 class="modal-title" id="modalTitle">Título do Problema</h3>
+            
+            <p class="modal-subtitle">Problema e Incômodo do Dia a Dia:</p>
+            <p class="modal-text" id="modalText">Descrição detalhada do problema...</p>
+
+            <div class="solution-box">
+                <p class="modal-subtitle" style="margin-top: 0;">Como o App Resolve (Protótipo):</p>
+                <p class="modal-text" id="modalSolution" style="font-size: 0.95rem;">Solução...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Protótipo do Organizador de Estudos da Taynah Mariana | Layout Rosa Choque Moderno</p>
+    </footer>
+
+    <!-- Arquivo do JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
